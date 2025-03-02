@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+  <title>•Bank Statement</title>
+</head>
+
+<body class=" bg-gray-900 ">
+  <!-- Dashboard -->
+  <div class="container mx-auto px-4 py-8">
+    <div id="dashboard" class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+      <h1 class="text-2xl font-bold text-center mb-6 text-purple-600">Bank Statement</h1>
+
+      <!-- Balance Display -->
+      <div class="text-center mb-8">
+        <p class="text-gray-600">Current Balance</p>
+        <p id="balance" class="text-3xl font-bold text-green-600">$0.00</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col space-y-4">
+        <button id="addMoney" class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 ">
+          Add Money
+        </button>
+        <button id="WidthDrow" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">
+          Withdraw Money
+        </button>
+        <button id="transactionHis" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
+          Transaction History
+        </button>
+      </div>
+    </div>
+    <!-- Add Money Section -->
+    <div id="add" class="hidden max-w-md mx-auto bg-white rounded-lg shadow-md p-6 mt-4">
+      <h2 class="text-xl font-bold mb-4">Add Money</h2>
+      <div class="mb-4">
+        <input type="number" id="addAmount" placeholder="Enter amount" class="w-full p-2 border rounded-md">
+        <p id="addError" class="text-red-500 text-sm mt-1"></p>
+      </div>
+      <button id="handleAddMoney" class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 w-full">
+        Confirm
+      </button>
+      <button id="btn1_2" class="mt-2 text-gray-600 hover:text-gray-800 w-full">
+        Cancel
+      </button>
+    </div>
+    <!-- Withdraw Money Section -->
+    <div id="subtract" class="hidden max-w-md mx-auto bg-white rounded-lg shadow-md p-6 mt-4">
+      <h2 class="text-xl font-bold mb-4">Withdraw Money</h2>
+      <div class="mb-4">
+        <input type="number" id="withdrawAmount" placeholder="Enter amount" class="w-full p-2 border rounded-md">
+        <p id="withdrawError" class="text-red-500 text-sm mt-1"></p>
+      </div>
+
+      <button id="handleWithdraw" class=" bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 w-full">
+        Confirm
+      </button>
+      <button id="btn2_2" class=" mt-2 text-gray-600 hover:text-gray-800 w-full">
+        Cancel
+      </button>
+
+    </div>
+
+    <!-- Transaction History -->
+    <div id="history" class="hidden max-w-xl mx-auto bg-white rounded-lg shadow-md p-6 mt-4">
+      <h2 class="text-xl font-bold mb-4">Transaction History</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="text-left text-gray-600">
+              <th class="pb-2">Date</th>
+              <th class="pb-2">Type</th>
+              <th class="pb-2">Amount</th>
+              <th class="pb-2">Balance</th>
+            </tr>
+          </thead>
+          <tbody id="transactionList">
+          </tbody>
+        </table>
+      </div>
+      <button id="btn3_2" class="mt-4 text-gray-600 hover:text-blue-600 w-full">
+        Back to Dashboard
+      </button>
+    </div>
+  </div>
+  <script src="./bankApp.js"></script>
+</body>
+
+</html>
